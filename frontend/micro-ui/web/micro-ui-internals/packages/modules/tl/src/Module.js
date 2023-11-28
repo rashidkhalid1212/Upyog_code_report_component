@@ -58,6 +58,7 @@ import TLTradeUnitsEmployeeInitial from "./pageComponents/TLTradeUnitsEmployeeIn
 
 import CitizenApp from "./pages/citizen";
 import EmployeeApp from "./pages/employee";
+import Report from "./components/Report";
 
 export const TLModule = ({ stateCode, userType, tenants }) => {
   const { path, url } = useRouteMatch();
@@ -153,6 +154,7 @@ const componentsToRegister = {
   SelectOtherTradeDetails,
   SelectTradeUnitsInitial,
   TLTradeUnitsEmployeeInitial,
+  Report,
 };
 
 export const initTLComponents = () => {

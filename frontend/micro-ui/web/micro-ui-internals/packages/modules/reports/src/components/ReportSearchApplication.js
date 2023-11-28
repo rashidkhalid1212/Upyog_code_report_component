@@ -38,24 +38,24 @@ const ReportSearchApplication = ({ onSubmit, isLoading, data, tableData, isTable
 
     const searchFormFieldsComponentProps = { formState, Controller, register, control, t, reset, data };
     const rowData = tableData?.reportData;
-    if(rowData?.[0]?.[0]!=1){
+    if (rowData?.[0]?.[0] != 1) {
         rowData?.map((row, index) => {
             row?.unshift(index + 1)
         })
     }
-    
+
 
     const rowHeaders = tableData?.reportHeader
-    
-    
-    if(rowHeaders?.[0]?.label!=="#"){
+
+
+    if (rowHeaders?.[0]?.label !== "#") {
         rowHeaders?.unshift({
             label: "#"
-        }) 
+        })
     }
-    
+
     const rowHeadersCopy = rowHeaders && JSON.parse(JSON.stringify(rowHeaders))//deep copy
-    
+
     const headersXLS = rowHeadersCopy?.map(header => t(header.label))
     let rowDataXLS = rowData && JSON.parse(JSON.stringify(rowData))//deep copy
     rowDataXLS?.unshift(headersXLS)
@@ -96,7 +96,7 @@ const ReportSearchApplication = ({ onSubmit, isLoading, data, tableData, isTable
         {
             label: "xls",
             onClick: () => {
-              return  Digit.Download.Excel(rowDataXLS, reportName)
+                return Digit.Download.Excel(rowDataXLS, reportName)
             }
 
         }
@@ -247,7 +247,7 @@ const ReportSearchApplication = ({ onSubmit, isLoading, data, tableData, isTable
                 data={rowData}
                 columns={columns}
                 getCellProps={(cellInfo) => {
-                    
+
                     return {
                         style: {
                             padding: "20px 18px",
@@ -272,7 +272,7 @@ const ReportSearchApplication = ({ onSubmit, isLoading, data, tableData, isTable
                     options={downloadOptions}
                     downloadBtnClassName={"reports-download-btn"}
                     downloadOptionsClassName={"reports-options-download"}
-                    reportStyles={{"position":"relative"}}
+                    reportStyles={{ "position": "relative" }}
                 />}
                 isReportTable={true}
             />) : <Loader />}
