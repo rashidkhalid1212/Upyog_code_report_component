@@ -49,7 +49,7 @@ function SearchReportFields({tenantId, t, control, handleSubmit}) {
         {/* <SubmitBar label={t("ES_COMMON_SEARCH")} submit onSubmit={()=> {console.log("submit is pressed",applicationType, toDate, fromDate)}}/> */}
         {/* <SubmitBar label={t("ES_COMMON_SEARCH")} submit onSubmit={handleSubmit(onSubmit)}/> */}
         <SubmitBar label={t("ES_COMMON_SEARCH")} submit />
-        <pp
+        <p
           onClick={() => {
             reset({
               applicationType: "",
@@ -67,7 +67,7 @@ function SearchReportFields({tenantId, t, control, handleSubmit}) {
           }}
         >
           {t(`ES_COMMON_CLEAR_ALL`)}
-        </pp>
+        </p>
       </SearchField>
     </>
   )
